@@ -1,6 +1,7 @@
 wp-admin
 wp-includes
 
+wp-content/languages/
 wp-content/plugins/
 wp-content/upgrade/
 wp-content/uploads/
