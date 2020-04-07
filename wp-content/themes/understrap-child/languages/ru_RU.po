@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: understrap\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2020-04-07 11:48+0300\n"
-"PO-Revision-Date: 2020-04-07 11:48+0300\n"
+"POT-Creation-Date: 2020-04-07 13:57+0300\n"
+"PO-Revision-Date: 2020-04-07 13:58+0300\n"
 "Last-Translator: edkozuto <edkozuto@gmail.com>\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -27,10 +27,97 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: languages\n"
 "X-Poedit-SearchPathExcluded-1: css\n"
 
-#: inc/add-post-type-realty.php:9 inc/add-post-type-realty.php:11
+#: inc/add-post-type-realty.php:9 inc/add-post-type-realty.php:12
 msgid "Realty Section"
-msgstr "Виды Недвижимости"
+msgstr "Тип недвижимости"
+
+#: inc/add-post-type-realty.php:11 inc/add-post-type-realty.php:21
+msgid "Realty Sections"
+msgstr "Типы недвижимости"
+
+#: inc/add-post-type-realty.php:13
+msgid "Find Realty Section"
+msgstr "Найти тип недвижимости"
+
+#: inc/add-post-type-realty.php:14
+msgid "All Realty Sections"
+msgstr "Все типы недвижимости"
+
+#: inc/add-post-type-realty.php:15 inc/add-post-type-realty.php:16
+msgid "Parent Realty Section"
+msgstr "Рродительский тип недвижимости"
+
+#: inc/add-post-type-realty.php:17
+msgid "Edit Realty Sections"
+msgstr "Редактировать тип недвижимости"
+
+#: inc/add-post-type-realty.php:18
+msgid "Update Realty Sections"
+msgstr "Обновить тип недвижимости"
 
 #: inc/add-post-type-realty.php:19
 msgid "Add Realty Section"
-msgstr "Добавить вид недвижимости"
+msgstr "Добавить тип недвижимости"
+
+#: inc/add-post-type-realty.php:20
+msgid "New Realty Section"
+msgstr "Новый тип недвижимости"
+
+#: inc/add-post-type-realty.php:23
+msgid "Realty Tax Description"
+msgstr "Разделы недвижимости"
+
+#: inc/add-post-type-realty.php:36 inc/add-post-type-realty.php:38
+msgid "Realty"
+msgstr "Недвижимость"
+
+#: inc/add-post-type-realty.php:39
+msgid "Realty Singular Name"
+msgstr "Недвижимость"
+
+#: inc/add-post-type-realty.php:41
+msgid "Add Realty"
+msgstr "Добавить недвижимость"
+
+#: inc/add-post-type-realty.php:42
+msgid "Not Found"
+msgstr "Не найдено"
+
+#: inc/add-post-type-realty.php:43
+msgid "Not Found In Trash"
+msgstr "В корзине ничего не найдено"
+
+#: inc/add-post-type-realty.php:98
+msgid "Show all"
+msgstr "Показать все"
+
+#: inc/add-post-type-realty.php:113
+msgid "Preview"
+msgstr "Превью"
+
+#~ msgid "Section"
+#~ msgstr "Раздел"
+
+#~ msgid "Find Section"
+#~ msgstr "Найти раздел"
+
+#~ msgid "All Sections"
+#~ msgstr "Все разделы"
+
+#~ msgid "Parent Section"
+#~ msgstr "Род. раздел"
+
+#~ msgid "Edit Sections"
+#~ msgstr "Ред. раздел"
+
+#~ msgid "Update Sections"
+#~ msgstr "Обновить разделы"
+
+#~ msgid "Add Section"
+#~ msgstr "Добавить раздел"
+
+#~ msgid "New Section"
+#~ msgstr "Новый раздел"
+
+#~ msgid "Sections"
+#~ msgstr "Разделы"

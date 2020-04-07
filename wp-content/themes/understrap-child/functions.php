@@ -9,8 +9,9 @@
 defined( 'ABSPATH' ) || exit;
 
 $understrap_includes = array(
-	'/setup.php',                           // Child Theme setup and custom theme supports.
-	'/template-tags.php',                   // Custom template tags for this theme.
+	'/setup-child.php',                           // Child Theme setup and custom theme supports.
+	'/enqueue-child.php',                         // Enqueue scripts and styles.
+	'/template-tags-child.php',                   // Custom template tags for this theme.
 	'/add-post-type-realty.php'             // Add custom post type "Недвижимость"
 );
 
