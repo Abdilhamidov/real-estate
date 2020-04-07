@@ -15,6 +15,7 @@ wp-content/themes/understrap
 wp-content/themes/*.php
 
 
+*.git
 *.php
 *.html
 *.txt
