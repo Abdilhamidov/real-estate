@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: understrap\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2020-04-07 13:57+0300\n"
-"PO-Revision-Date: 2020-04-07 13:58+0300\n"
+"POT-Creation-Date: 2020-04-07 15:35+0300\n"
+"PO-Revision-Date: 2020-04-07 15:36+0300\n"
 "Last-Translator: edkozuto <edkozuto@gmail.com>\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -26,6 +26,74 @@ msgstr ""
 "X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPathExcluded-0: languages\n"
 "X-Poedit-SearchPathExcluded-1: css\n"
+
+#: inc/add-post-type-city.php:9 inc/add-post-type-city.php:12
+msgid "Section"
+msgstr "Раздел"
+
+#: inc/add-post-type-city.php:11 inc/add-post-type-city.php:21
+msgid "Sections"
+msgstr "Разделы"
+
+#: inc/add-post-type-city.php:13
+msgid "Find Section"
+msgstr "Найти раздел"
+
+#: inc/add-post-type-city.php:14
+msgid "All Sections"
+msgstr "Все разделы"
+
+#: inc/add-post-type-city.php:15 inc/add-post-type-city.php:16
+msgid "Parent Section"
+msgstr "Род. раздел"
+
+#: inc/add-post-type-city.php:17
+msgid "Edit Sections"
+msgstr "Ред. разделы"
+
+#: inc/add-post-type-city.php:18
+msgid "Update Sections"
+msgstr "Обновить разделы"
+
+#: inc/add-post-type-city.php:19
+msgid "Add Section"
+msgstr "Добавить раздел"
+
+#: inc/add-post-type-city.php:20
+msgid "New Section"
+msgstr "Новый раздел"
+
+#: inc/add-post-type-city.php:23
+msgid "City Tax Description"
+msgstr "Разделы городов"
+
+#: inc/add-post-type-city.php:36 inc/add-post-type-city.php:38
+msgid "City"
+msgstr "Город"
+
+#: inc/add-post-type-city.php:39
+msgid "City Singular Name"
+msgstr "Город"
+
+#: inc/add-post-type-city.php:41
+msgid "Add City"
+msgstr "Добавить город"
+
+#: inc/add-post-type-city.php:42 inc/add-post-type-realty.php:42
+msgid "Not Found"
+msgstr "Не найдено"
+
+#: inc/add-post-type-city.php:43 inc/add-post-type-realty.php:43
+msgid "Not Found In Trash"
+msgstr "В корзине ничего не найдено"
+
+#: inc/add-post-type-city.php:81 inc/add-post-type-realty.php:82
+msgid "Show all"
+msgstr "Показать все"
+
+#: inc/add-post-type-city.php:96 inc/add-post-type-realty.php:97
+msgid "Preview"
+msgstr "Превью"
 
 #: inc/add-post-type-realty.php:9 inc/add-post-type-realty.php:12
 msgid "Realty Section"
@@ -79,45 +147,48 @@ msgstr "Недвижимость"
 msgid "Add Realty"
 msgstr "Добавить недвижимость"
 
-#: inc/add-post-type-realty.php:42
-msgid "Not Found"
-msgstr "Не найдено"
+#: inc/add-properties.php:5
+#, fuzzy
+#| msgid "Realty Sections"
+msgid "Realty Properties"
+msgstr "Типы недвижимости"
 
-#: inc/add-post-type-realty.php:43
-msgid "Not Found In Trash"
-msgstr "В корзине ничего не найдено"
-
-#: inc/add-post-type-realty.php:98
-msgid "Show all"
-msgstr "Показать все"
-
-#: inc/add-post-type-realty.php:113
-msgid "Preview"
-msgstr "Превью"
-
-#~ msgid "Section"
-#~ msgstr "Раздел"
-
-#~ msgid "Find Section"
-#~ msgstr "Найти раздел"
-
-#~ msgid "All Sections"
-#~ msgstr "Все разделы"
-
-#~ msgid "Parent Section"
-#~ msgstr "Род. раздел"
-
-#~ msgid "Edit Sections"
+#, fuzzy
+#~| msgid "Edit Sections"
+#~ msgid "City Section"
 #~ msgstr "Ред. раздел"
 
-#~ msgid "Update Sections"
-#~ msgstr "Обновить разделы"
+#, fuzzy
+#~| msgid "Find Realty Section"
+#~ msgid "Find City Section"
+#~ msgstr "Найти тип недвижимости"
 
-#~ msgid "Add Section"
-#~ msgstr "Добавить раздел"
+#, fuzzy
+#~| msgid "All Realty Sections"
+#~ msgid "All City Sections"
+#~ msgstr "Все типы недвижимости"
 
-#~ msgid "New Section"
-#~ msgstr "Новый раздел"
+#, fuzzy
+#~| msgid "Parent Realty Section"
+#~ msgid "Parent City Section"
+#~ msgstr "Рродительский тип недвижимости"
 
-#~ msgid "Sections"
-#~ msgstr "Разделы"
+#, fuzzy
+#~| msgid "Edit Realty Sections"
+#~ msgid "Edit City Sections"
+#~ msgstr "Редактировать тип недвижимости"
+
+#, fuzzy
+#~| msgid "Update Realty Sections"
+#~ msgid "Update City Sections"
+#~ msgstr "Обновить тип недвижимости"
+
+#, fuzzy
+#~| msgid "Add Realty Section"
+#~ msgid "Add City Section"
+#~ msgstr "Добавить тип недвижимости"
+
+#, fuzzy
+#~| msgid "New Realty Section"
+#~ msgid "New City Section"
+#~ msgstr "Новый тип недвижимости"
