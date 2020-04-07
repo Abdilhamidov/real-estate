@@ -111,7 +111,7 @@ add_filter("manage_"."city_posts"."_custom_column", function($column_name, $id){
 
 
 // добавляем сортировку колонки
-add_filter( 'manage_'.'edit-city'.'_sortable_columns', function(){
+add_filter( 'manage_'.'edit-city'.'_sortable_columns', function($sortable_columns){
 	$sortable_columns['preview'] = [ 'preview_preview', false ]; // false = asc (по умолчанию), true  = desc
 	return $sortable_columns;
 } );

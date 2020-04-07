@@ -14,6 +14,7 @@ $understrap_includes = array(
 	'/template-tags-child.php',                   // Custom template tags for this theme.
 	'/add-post-type-realty.php',                  // Add custom post type "Недвижимость"
 	'/add-post-type-city.php',                    // Add custom post type "Город"
+	'/add-get-realties-widget.php',               // Add widget to get last realties posts
 );
 
 foreach ( $understrap_includes as $file ) {

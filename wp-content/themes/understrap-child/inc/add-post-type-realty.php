@@ -93,7 +93,8 @@ add_action('restrict_manage_posts', function(){
 // создаем колонки в админке
 add_filter("manage_"."realty_posts"."_columns", function($columns){
 	$preview = array( 'preview' => __( 'Preview', 'understrap-child') );
-	$columns = array_slice( $columns, 0, 1 ) + $preview + array_slice( $columns, 1, NULL, true );
+	$city = array( 'city' => __( 'City', 'understrap-child') );
+	$columns = array_slice( $columns, 0, 1 ) + $preview  + array_slice( $columns, 1, 2 ) + $city + array_slice( $columns, 2, NULL, true );
 	return $columns;
 });
 
@@ -105,15 +106,11 @@ add_filter("manage_"."realty_posts"."_custom_column", function($column_name, $id
 			$html = get_the_post_thumbnail( $id, array(40, 40)); 
 			echo $html;
  			break;
-		case 'section':
-			$terms = get_the_terms( $id, 'realty_category' );
-			if($terms){
-				$names = array();
-				foreach ($terms as $term) {
-					$names[] = $term->name;
-				}
-				$html = implode(" - ", $names);
-				echo $html;
+		case 'city':
+			$post = get_post( $id );
+			$city = get_field( 'city', $id );
+			if($city){
+				echo $city[0]->post_title;
 			}
  			break;
 		default:
@@ -122,8 +119,11 @@ add_filter("manage_"."realty_posts"."_custom_column", function($column_name, $id
 }, 10, 3);
 
 
-// добавляем сортировку колонки
-add_filter( 'manage_'.'edit-realty'.'_sortable_columns', function(){
+// добавляем сортировку колонок
+add_filter( 'manage_'.'edit-realty'.'_sortable_columns', function($sortable_columns){
 	$sortable_columns['preview'] = [ 'preview_preview', false ]; // false = asc (по умолчанию), true  = desc
+	$sortable_columns['title'] = [ 'title_title', false ]; 
+	$sortable_columns['taxonomy-realty_category'] = [ 'taxonomy-realty_category_taxonomy-realty_category', false ]; 
+	$sortable_columns['city'] = [ 'city_city', false ]; 
 	return $sortable_columns;
 } );
