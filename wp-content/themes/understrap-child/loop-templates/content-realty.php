@@ -9,7 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class("my-2"); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
 
@@ -24,35 +24,30 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</p>
 	<div class="entry-content">
-
-		<?php //the_content(); ?>
 		<p>
 		<?php 
 			$content = apply_filters( 'the_content', $post->post_content ); 
-			echo wp_trim_words( $content, 20, '... <a href="'. get_permalink($post->ID) .'" class="more-link"><i class="fas fa-angle-double-right"></i></a>' );
+			echo wp_trim_words( $content, 18, '... <a href="'. get_permalink($post->ID) .'" class="more-link"><i class="fas fa-angle-double-right"></i></a>' );
 		?>
 		</p>
 		<?php 
 		$fields = get_field_objects();
 		if( $fields ): ?>
-			<p>
-				<ul class="list-inline">
-					<?php foreach( $fields as $name => $fields ): ?>
-						<?php switch ($name) {
-						 	case 'city':
-						 		$title = $fields["value"][0]->post_title;
-						 		break;
-						 	default:
-						 		$title = $fields["value"];
-						 		break;
-						 } ?>
-						<li class="list-inline-item"><?php echo $fields["label"]; ?>: <?php echo $title; ?></li>
-					<?php endforeach; ?>
-				</ul>
-			</p>
+			<ul class="list-inline">
+				<?php foreach( $fields as $name => $fields ): ?>
+					<?php switch ($name) {
+					 	case 'city':
+					 		$title = $fields["value"][0]->post_title;
+					 		break;
+					 	default:
+					 		$title = $fields["value"];
+					 		break;
+					 } ?>
+					<li class="list-inline-item d-block"><small><?php echo $fields["label"]; ?>: <?php echo $title; ?></small></li>
+				<?php endforeach; ?>
+			</ul>
 		<?php endif;
 		?>
-
 		<?php
 		wp_link_pages(
 			array(
