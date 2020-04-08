@@ -107,7 +107,6 @@ add_filter("manage_"."realty_posts"."_custom_column", function($column_name, $id
 			echo $html;
  			break;
 		case 'city':
-			$post = get_post( $id );
 			$city = get_field( 'city', $id );
 			if($city){
 				echo $city[0]->post_title;

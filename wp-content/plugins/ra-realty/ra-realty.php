@@ -1,13 +1,14 @@
 <?php
 /* ====================================
  * Plugin Name: RA Realty
- * Description: Для работы с записями "Недвижимость". Добавление c учетом всех мета-полей.
+ * Description: Для работы с типами записей "Недвижимость". Для формы добавления записи <strong>необходим плагин The Advanced Custom Fields.</strong>
  * Author: Abdilkhamidov R.
  * Version: 1.0
  * ==================================== */
 
 define( 'RARLT_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'RARLT_PLUGIN_URL', plugin_dir_url(__FILE__) );
+
 
 // activate the plugin
 add_action('plugins_loaded', 'rarlt_plugin_init');
@@ -18,8 +19,8 @@ function rarlt_plugin_init(){
 
 	include_once(RARLT_PLUGIN_DIR."settings.php");
 
-	// include shortcode [addrealty-form ...]
-	// include_once("shortcodes/addrealty-form.php");
+	// include shortcode [add-realty...]
+	include_once(RARLT_PLUGIN_DIR."shortcodes/add-realty.php");
 
 	/* 
 	* Include CSS and JS for front
