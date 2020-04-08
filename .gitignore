@@ -2,7 +2,8 @@ wp-admin
 wp-includes
 
 wp-content/languages/
-wp-content/plugins/
+wp-content/plugins/*
+!wp-content/plugins/ra-realty
 wp-content/upgrade/
 wp-content/uploads/
 wp-content/*.php

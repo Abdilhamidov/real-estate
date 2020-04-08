@@ -1,0 +1,54 @@
+/* ! Don t edit this styles directly! */
+/* ! This is gulp generated styles. */
+/* ! To change them edit the source _scss files in /src folder and then run gulp compiler */
+/* vars */
+/* resets */
+/* helpers */
+.h-from-w {
+  position: relative; }
+  .h-from-w:before {
+    content: "";
+    display: block;
+    width: 100%; }
+  .h-from-w.ratio-16x9 {
+    padding-top: 56.25%;
+    /* (9:16)*100% */ }
+  .h-from-w.ratio-4x3 {
+    padding-top: 75%; }
+  .h-from-w.ratio-2x1 {
+    padding-top: 50%; }
+  .h-from-w.ratio-1x1 {
+    padding-top: 100%; }
+  .h-from-w > .ratio-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden; }
+    .h-from-w > .ratio-content img {
+      width: auto;
+      height: 100%; }
+
+/* layout */
+/* links */
+/* header */
+/* footer */
+#wrapper-footer {
+  margin-top: 2em;
+  background-color: #53f;
+  color: #fff; }
+  #wrapper-footer a, #wrapper-footer a:hover, #wrapper-footer a:focus, #wrapper-footer a:active, #wrapper-footer a:visited {
+    color: #fff; }
+
+/* main */
+article.realty {
+  min-height: 570px; }
+
+.pagination {
+  margin-top: 1.5em;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+/* widgets */
