@@ -15,6 +15,7 @@ $understrap_includes = array(
 	'/add-post-type-realty.php',                  // Add custom post type "Недвижимость"
 	'/add-post-type-city.php',                    // Add custom post type "Город"
 	'/add-get-realties-widget.php',               // Add widget to get last realties posts
+	'/add-shortcodes.php',                        // Add shortcodes
 );
 
 foreach ( $understrap_includes as $file ) {

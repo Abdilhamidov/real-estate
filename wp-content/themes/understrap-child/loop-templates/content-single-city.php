@@ -29,37 +29,9 @@ defined( 'ABSPATH' ) || exit;
 			the_content();
 		?>
 		</p>
-		
+
 		<!--  Связанная недвижимость  -->
-		<?php 
-		$args = array(
-			'post_status' => 'publish',
-			'orderby' => 'date',
-			'post_type' => 'realty',
-			'posts_per_page' => 10,
-			'order' => 'DESC',
-			'meta_query' => array(
-				array(
-					'key' => 'city',
-					'value' => serialize( array( strval($post->ID) ) ),
-					'compare' => 'LIKE',
-				),
-			),
-		); 
-		$result = new WP_Query($args);
-		?>
-		<?php if ( $result->have_posts() ) : ?>
-			<div class="linked-realty-wrapper">
-				<h2><?php _e( 'Realty', 'understrap-child'); ?></h2>
-				<div class="row">
-					<?php while ( $result->have_posts() ) : $result->the_post(); ?>
-						<div class="col-md-4">
-							<?php get_template_part( 'loop-templates/content', 'realty' ); ?>
-						</div>
-					<?php endwhile; wp_reset_postdata(); ?>
-				</div>
-			</div>
-		<?php endif; ?>
+		<?php echo do_shortcode('[linked-realties limit="10" city_id="'.$post->ID.'"]'); ?>
 		<!--  Связанная недвижимость  -->
 
 		<?php

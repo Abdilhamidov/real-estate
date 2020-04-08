@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: understrap\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2020-04-08 11:15+0300\n"
-"PO-Revision-Date: 2020-04-08 11:16+0300\n"
+"POT-Creation-Date: 2020-04-08 13:18+0300\n"
+"PO-Revision-Date: 2020-04-08 13:18+0300\n"
 "Last-Translator: edkozuto <edkozuto@gmail.com>\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -161,6 +161,7 @@ msgid "Realty Tax Description"
 msgstr "Разделы недвижимости"
 
 #: inc/add-post-type-realty.php:35 inc/add-post-type-realty.php:37
+#: loop-templates/content-single-city.php:53
 msgid "Realty"
 msgstr "Недвижимость"
 
@@ -173,10 +174,14 @@ msgid "Add Realty"
 msgstr "Добавить недвижимость"
 
 #: loop-templates/content-realty.php:54
+#: loop-templates/content-single-city.php:68
+#: loop-templates/content-single-realty.php:53
 msgid "Pages:"
 msgstr "Страницы:"
 
 #: loop-templates/content-realty.php:64
+#: loop-templates/content-single-city.php:78
+#: loop-templates/content-single-realty.php:63
 msgid "Edit"
 msgstr "Редактировать"
 
