@@ -10,7 +10,7 @@ wp-content/*.php
 wp-content/*.log
 
 wp-content/themes/*
-!wp-content/themes/understrap
+!wp-content/themes/understrap-child
 
 
 *.git
