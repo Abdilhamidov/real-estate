@@ -26,8 +26,7 @@ defined( 'ABSPATH' ) || exit;
 	<div class="entry-content">
 		<p>
 		<?php 
-			$content = apply_filters( 'the_content', $post->post_content ); 
-			echo wp_trim_words( $content, 18, '... <a href="'. get_permalink($post->ID) .'" class="more-link"><i class="fas fa-angle-double-right"></i></a>' );
+			the_content();
 		?>
 		</p>
 		<?php 
