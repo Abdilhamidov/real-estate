@@ -9,11 +9,8 @@ wp-content/uploads/
 wp-content/*.php
 wp-content/*.log
 
-wp-content/themes/twentynineteen
-wp-content/themes/twentyseventeen
-wp-content/themes/twentytwenty
-wp-content/themes/understrap
-wp-content/themes/*.php
+wp-content/themes/*
+!wp-content/themes/understrap
 
 
 *.git
