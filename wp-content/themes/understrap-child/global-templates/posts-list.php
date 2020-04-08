@@ -11,18 +11,23 @@ defined( 'ABSPATH' ) || exit;
 $result = get_query_var('result');
 
 // fppr($result, __FILE__.' $result');
-
 ?>
 
+<!-- 16:9 (отношение между шириной и высотой) -->
+<div class="item-responsive item-16by9">
+  <div class="content"></div>
+</div>
 
-<div class="wrapper" id="wrapper-posts-list">
+<div class="container posts-list-widget">
+	<div class="row">
 
-	<?php //get_template_part( 'sidebar-templates/sidebar', 'hero' ); ?>
+		<?php while ( $result->have_posts() ) : $result->the_post(); ?>
 
-	<?php while ( $result->have_posts() ) : $result->the_post(); ?>
+			<div class="col-md-4">
+				<?php get_template_part( 'loop-templates/content', 'realty' ); ?>
+			</div>
 
-		<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+		<?php endwhile; wp_reset_postdata(); ?>
 
-	<?php endwhile; wp_reset_postdata(); ?>
-
+	</div>
 </div>

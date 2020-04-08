@@ -3,42 +3,22 @@
 if( ! defined('ABSPATH') ) exit;
 
 // Регистрируем новый виджет
-add_action( 'widgets_init', 'register_top_posts_widget' );
-function register_top_posts_widget() {
-	register_widget( 'Last_Post_Widget' );
+add_action( 'widgets_init', 'register_posts_list_widget' );
+function register_posts_list_widget() {
+	register_widget( 'Posts_List_Widget' );
 }
 
 // Добавляем новый виджет
-class Last_Post_Widget extends WP_Widget {
+class Posts_List_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'pop_widget',
-			__( 'Last Posts', 'understrap-child'),
-			array( 'description' => __( 'Displays Last Posts', 'understrap-child'), )
+			__( 'Posts List', 'understrap-child'),
+			array( 'description' => __( 'Displays Posts List', 'understrap-child'), )
 		);
-
-
-		// Функция подсчета просмотров
-		// function set_post_views($postID) {
-		// 	// Мета где будем хранить данные
-		// 	$count_views = 'count_views'; // Количество просмотров
-
-		// 	// Получаем данные из мета
-		// 	$count = get_post_meta($postID, $count_views, true); // Количество просмотров
-
-		// 	// Если $count не существует
-		// 	if($count=='') {
-		// 		$count = 0;
-		// 		delete_post_meta($postID, $count_views);
-		// 		add_post_meta($postID, $count_views, '0');
-		// 	} else {
-		// 		$count++;
-		// 		update_post_meta($postID, $count_views, $count);
-		// 	}
-		// }   
 	}
 
-	/** Вывод виджета популярных записей
+	/** Вывод виджета записей
 	 *
 	 *  @param array $args     аргументы виджета.
 	 *  @param array $instance сохраненные данные из настроек

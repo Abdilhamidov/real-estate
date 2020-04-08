@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: understrap\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2020-04-07 15:35+0300\n"
-"PO-Revision-Date: 2020-04-07 15:36+0300\n"
+"POT-Creation-Date: 2020-04-07 20:39+0300\n"
+"PO-Revision-Date: 2020-04-07 20:39+0300\n"
 "Last-Translator: edkozuto <edkozuto@gmail.com>\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -26,6 +26,26 @@ msgstr ""
 "X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPathExcluded-0: languages\n"
 "X-Poedit-SearchPathExcluded-1: css\n"
+
+#: inc/add-get-realties-widget.php:16
+msgid "Posts List"
+msgstr "Список постов"
+
+#: inc/add-get-realties-widget.php:17
+msgid "Displays Posts List"
+msgstr "Выводит список постов"
+
+#: inc/add-get-realties-widget.php:52 inc/add-get-realties-widget.php:58
+msgid "Title"
+msgstr "Заголовок"
+
+#: inc/add-get-realties-widget.php:62
+msgid "Post Type"
+msgstr "Тип поста"
+
+#: inc/add-get-realties-widget.php:70
+msgid "Quantity"
+msgstr "Количество"
 
 #: inc/add-post-type-city.php:9 inc/add-post-type-city.php:12
 msgid "Section"
@@ -67,31 +87,32 @@ msgstr "Новый раздел"
 msgid "City Tax Description"
 msgstr "Разделы городов"
 
-#: inc/add-post-type-city.php:36 inc/add-post-type-city.php:38
+#: inc/add-post-type-city.php:35 inc/add-post-type-city.php:37
+#: inc/add-post-type-realty.php:96
 msgid "City"
 msgstr "Город"
 
-#: inc/add-post-type-city.php:39
+#: inc/add-post-type-city.php:38
 msgid "City Singular Name"
 msgstr "Город"
 
-#: inc/add-post-type-city.php:41
+#: inc/add-post-type-city.php:40
 msgid "Add City"
 msgstr "Добавить город"
 
-#: inc/add-post-type-city.php:42 inc/add-post-type-realty.php:42
+#: inc/add-post-type-city.php:41 inc/add-post-type-realty.php:41
 msgid "Not Found"
 msgstr "Не найдено"
 
-#: inc/add-post-type-city.php:43 inc/add-post-type-realty.php:43
+#: inc/add-post-type-city.php:42 inc/add-post-type-realty.php:42
 msgid "Not Found In Trash"
 msgstr "В корзине ничего не найдено"
 
-#: inc/add-post-type-city.php:81 inc/add-post-type-realty.php:82
+#: inc/add-post-type-city.php:79 inc/add-post-type-realty.php:80
 msgid "Show all"
 msgstr "Показать все"
 
-#: inc/add-post-type-city.php:96 inc/add-post-type-realty.php:97
+#: inc/add-post-type-city.php:94 inc/add-post-type-realty.php:95
 msgid "Preview"
 msgstr "Превью"
 
@@ -113,7 +134,7 @@ msgstr "Все типы недвижимости"
 
 #: inc/add-post-type-realty.php:15 inc/add-post-type-realty.php:16
 msgid "Parent Realty Section"
-msgstr "Рродительский тип недвижимости"
+msgstr "Родительский тип недвижимости"
 
 #: inc/add-post-type-realty.php:17
 msgid "Edit Realty Sections"
@@ -135,60 +156,28 @@ msgstr "Новый тип недвижимости"
 msgid "Realty Tax Description"
 msgstr "Разделы недвижимости"
 
-#: inc/add-post-type-realty.php:36 inc/add-post-type-realty.php:38
+#: inc/add-post-type-realty.php:35 inc/add-post-type-realty.php:37
 msgid "Realty"
 msgstr "Недвижимость"
 
-#: inc/add-post-type-realty.php:39
+#: inc/add-post-type-realty.php:38
 msgid "Realty Singular Name"
 msgstr "Недвижимость"
 
-#: inc/add-post-type-realty.php:41
+#: inc/add-post-type-realty.php:40
 msgid "Add Realty"
 msgstr "Добавить недвижимость"
 
-#: inc/add-properties.php:5
-#, fuzzy
-#| msgid "Realty Sections"
-msgid "Realty Properties"
-msgstr "Типы недвижимости"
+#: loop-templates/content-realty.php:58
+msgid "Pages:"
+msgstr "Страницы:"
 
-#, fuzzy
-#~| msgid "Edit Sections"
-#~ msgid "City Section"
-#~ msgstr "Ред. раздел"
+#: loop-templates/content-realty.php:68
+msgid "Edit"
+msgstr "Редактировать"
 
-#, fuzzy
-#~| msgid "Find Realty Section"
-#~ msgid "Find City Section"
-#~ msgstr "Найти тип недвижимости"
+#~ msgid "all_square"
+#~ msgstr "Площадь"
 
-#, fuzzy
-#~| msgid "All Realty Sections"
-#~ msgid "All City Sections"
-#~ msgstr "Все типы недвижимости"
-
-#, fuzzy
-#~| msgid "Parent Realty Section"
-#~ msgid "Parent City Section"
-#~ msgstr "Рродительский тип недвижимости"
-
-#, fuzzy
-#~| msgid "Edit Realty Sections"
-#~ msgid "Edit City Sections"
-#~ msgstr "Редактировать тип недвижимости"
-
-#, fuzzy
-#~| msgid "Update Realty Sections"
-#~ msgid "Update City Sections"
-#~ msgstr "Обновить тип недвижимости"
-
-#, fuzzy
-#~| msgid "Add Realty Section"
-#~ msgid "Add City Section"
-#~ msgstr "Добавить тип недвижимости"
-
-#, fuzzy
-#~| msgid "New Realty Section"
-#~ msgid "New City Section"
-#~ msgstr "Новый тип недвижимости"
+#~ msgid "price"
+#~ msgstr "Цена"

@@ -2,11 +2,5 @@
 /* ! Don t edit this styles directly! */
 /* ! This is gulp generated styles. */
 /* ! To change them edit the source _scss files in /src folder and then run gulp compiler */
-/* admin main */
-.column-preview {
-  width: 90px;
-  text-align: center; }
 
-@media only screen and (max-width: 799px) {
-  .column-preview {
-    display: none; } }
+@import "admin/main";

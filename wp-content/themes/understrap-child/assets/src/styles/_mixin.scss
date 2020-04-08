@@ -1,0 +1,9 @@
+/* mixins */
+@mixin cfx {
+	&:after{
+		content: '';
+		clear: both;
+		display: block;
+	}
+}
+

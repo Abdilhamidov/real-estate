@@ -12,7 +12,10 @@ defined( 'ABSPATH' ) || exit;
  * Include CSS and JS for child theme
  */
 function understrap_child_scripts() {
-	// enqueue_fa_fonts();
+	enqueue_fa_fonts();
+
+	// my
+	wp_enqueue_style( 'fingildiya-style', get_stylesheet_directory_uri() . '/assets/dist/css/style.min.css', array(), "1.0.0" );
 
 	// wp_enqueue_script( 'understrap-child-scripts', get_stylesheet_directory_uri() . '/assets/dist/js/main.min.js', array(), "1.0", true );
 }
@@ -24,7 +27,7 @@ add_action( 'wp_enqueue_scripts', 'understrap_child_scripts' );
  */
 function admin_style() {
 	// enqueue_fa_fonts();
-	wp_enqueue_style('admin-styles', get_stylesheet_directory_uri() . '/assets/dist/css/admin-style.min.css', array(), "1.0");
+	wp_enqueue_style('admin-styles', get_stylesheet_directory_uri() . '/assets/dist/css/admin-style.min.css', array(), "1.0.0");
 }
 add_action('admin_enqueue_scripts', 'admin_style');
 
