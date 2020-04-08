@@ -35,11 +35,15 @@ class Posts_List_Widget extends WP_Widget {
 			'post_status' => 'publish',
 			'orderby' => 'date',
 			'post_type' => $post_type,
-			'numberposts' => $quantity,
+			'posts_per_page' => $quantity,
 			'order' => 'DESC',
 		); 
 		$result = new WP_Query($args);
-		set_query_var('result', $result); // send data to template
+		$attr = array(
+			'title' => $title,
+			'wp_query_result' => $result,
+		);
+		set_query_var('attr', $attr); // send data to template
 		get_template_part( 'global-templates/posts', 'list' );
 	}
 

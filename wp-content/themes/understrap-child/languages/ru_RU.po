@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: understrap\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2020-04-07 20:39+0300\n"
-"PO-Revision-Date: 2020-04-07 20:39+0300\n"
+"POT-Creation-Date: 2020-04-08 11:15+0300\n"
+"PO-Revision-Date: 2020-04-08 11:16+0300\n"
 "Last-Translator: edkozuto <edkozuto@gmail.com>\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -27,6 +27,10 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: languages\n"
 "X-Poedit-SearchPathExcluded-1: css\n"
 
+#: global-templates/posts-list.php:26
+msgid "Show All"
+msgstr "Смотреть все"
+
 #: inc/add-get-realties-widget.php:16
 msgid "Posts List"
 msgstr "Список постов"
@@ -35,15 +39,15 @@ msgstr "Список постов"
 msgid "Displays Posts List"
 msgstr "Выводит список постов"
 
-#: inc/add-get-realties-widget.php:52 inc/add-get-realties-widget.php:58
+#: inc/add-get-realties-widget.php:56 inc/add-get-realties-widget.php:62
 msgid "Title"
 msgstr "Заголовок"
 
-#: inc/add-get-realties-widget.php:62
+#: inc/add-get-realties-widget.php:66
 msgid "Post Type"
 msgstr "Тип поста"
 
-#: inc/add-get-realties-widget.php:70
+#: inc/add-get-realties-widget.php:74
 msgid "Quantity"
 msgstr "Количество"
 
@@ -168,11 +172,11 @@ msgstr "Недвижимость"
 msgid "Add Realty"
 msgstr "Добавить недвижимость"
 
-#: loop-templates/content-realty.php:58
+#: loop-templates/content-realty.php:54
 msgid "Pages:"
 msgstr "Страницы:"
 
-#: loop-templates/content-realty.php:68
+#: loop-templates/content-realty.php:64
 msgid "Edit"
 msgstr "Редактировать"
 

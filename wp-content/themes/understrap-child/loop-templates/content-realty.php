@@ -12,14 +12,14 @@ defined( 'ABSPATH' ) || exit;
 <article <?php post_class("my-2"); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
-
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
+		<?php the_title( '<h3 class="entry-title"><a href="'. get_permalink($post->ID) .'">', '</a></h3>' ); ?>
 	</header><!-- .entry-header -->
 	<p>
 		<div class="h-from-w ratio-4x3">
 			<div class="ratio-content">
-				<?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
+				<a href="<?php echo get_permalink($post->ID); ?>">
+					<?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
+				</a>
 			</div>
 		</div>
 	</p>

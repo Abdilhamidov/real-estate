@@ -8,26 +8,22 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$result = get_query_var('result');
-
-// fppr($result, __FILE__.' $result');
+$attr = get_query_var('attr');
+$result = $attr["wp_query_result"];
+// fppr($attr, __FILE__.' $attr');
 ?>
-
-<!-- 16:9 (отношение между шириной и высотой) -->
-<div class="item-responsive item-16by9">
-  <div class="content"></div>
-</div>
-
+<?php if($result->have_posts()): ?>
 <div class="container posts-list-widget">
+	<h2 class="text-center text-uppercase"><?php echo $attr["title"] ?></h2>
 	<div class="row">
-
 		<?php while ( $result->have_posts() ) : $result->the_post(); ?>
-
 			<div class="col-md-4">
 				<?php get_template_part( 'loop-templates/content', 'realty' ); ?>
 			</div>
-
 		<?php endwhile; wp_reset_postdata(); ?>
-
+	</div>
+	<div class="text-center mt-3">
+		<a href="/<?php echo $result->query["post_type"]; ?>/" class="btn btn-primary "><?php _e( 'Show All', 'understrap-child' ) ?></a>
 	</div>
 </div>
+<?php endif; ?>
