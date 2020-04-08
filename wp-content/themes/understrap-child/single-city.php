@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying realty single posts.
+ * The template for displaying city single posts.
  *
  * @package understrap
  */
@@ -25,7 +25,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'loop-templates/content', 'single-realty' ); ?>
+					<?php get_template_part( 'loop-templates/content', 'single-city' ); ?>
 
 					<?php understrap_post_nav(); ?>
 
