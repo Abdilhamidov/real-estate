@@ -26,65 +26,69 @@
 	// 
 	.on('submit', 'form.add-realty-form', function(e){
 		e.preventDefault();
-		var form_data = $(this).serialize();
-		console.log('form_data', form_data);
 
-		var ajaxUrl = $(this).attr('action');
-		console.log('ajaxUrl', ajaxUrl);
+		var post_data = $(this).serializeObject();
+		post_data['action'] = 'addpost';
 
-		// console.log('post_data', post_data);
+		console.log('post_data', post_data);
 
-		// $.ajax({
-		// 	type: "POST",
-		// 	url: ajaxUrl,
-		// 	data: post_data,
-		// 	dataType: 'json',
-		// 	success: function(responce){
-		// 		var responce_content = responce;
-		// 		console.log('responce', responce);
-		// 		// вывод контента
-		// 		$(root_block).find('.ajax-responce-content').empty();
-		// 		$(root_block).find('.ajax-responce-content').text(JSON.stringify(responce));
-		// 	},
-		// 	error: function (jqXHR, exception) {
-		// 		var msg = '';
-		// 		if (jqXHR.status === 0) {
-		// 		   msg = 'Not connect.\n Verify Network.';
-		// 		} else if (jqXHR.status == 404) {
-		// 		   msg = 'Requested page not found. [404]';
-		// 		} else if (jqXHR.status == 500) {
-		// 		   msg = 'Internal Server Error [500].';
-		// 		} else if (exception === 'parsererror') {
-		// 		   msg = 'Requested JSON parse failed.';
-		// 		} else if (exception === 'timeout') {
-		// 		   msg = 'Time out error.';
-		// 		} else if (exception === 'abort') {
-		// 		   msg = 'Ajax request aborted.';
-		// 		} else {
-		// 		   msg = 'Uncaught Error.\n' + jqXHR.responseText;
-		// 		}
-		// 		console.warn(msg);
-		// 	},
-		// });
+		$.ajax({
+			type: "POST",
+			url: myajax.url,
+			data: post_data,
+			dataType: 'json',
+			success: function(responce){
+				console.log('responce', responce);
+				if(responce.errors.length){
+					alert(responce.errors.join('; '));
+				}else{
+					
+				}
+			},
+			error: function (jqXHR, exception) {
+				var msg = '';
+				if (jqXHR.status === 0) {
+				   msg = 'Not connect.\n Verify Network.';
+				} else if (jqXHR.status == 404) {
+				   msg = 'Requested page not found. [404]';
+				} else if (jqXHR.status == 500) {
+				   msg = 'Internal Server Error [500].';
+				} else if (exception === 'parsererror') {
+				   msg = 'Requested JSON parse failed.';
+				} else if (exception === 'timeout') {
+				   msg = 'Time out error.';
+				} else if (exception === 'abort') {
+				   msg = 'Ajax request aborted.';
+				} else {
+				   msg = 'Uncaught Error.\n' + jqXHR.responseText;
+				}
+				console.warn(msg);
+			},
+		});
 	})
 	;
 
 	/*	------------------
 		Helper functions
 	--------------------- */
-	// check for ie10, ie11
-	function isIE(){
-		return /Trident\/|MSIE/.test(window.navigator.userAgent);
+	// get form values as object
+	if ( !(typeof $.fn.serializeObject == 'function') ) {
+		$.fn.serializeObject = function() {
+			var o = {};
+			var a = this.serializeArray();
+			$.each(a, function() {
+				if (o[this.name]) {
+					if (!o[this.name].push) {
+						o[this.name] = [o[this.name]];
+					}
+					o[this.name].push(this.value || '');
+				} else {
+					o[this.name] = this.value || '';
+				}
+			});
+			return o;
+		};
 	}
 
-	// helper: get form values as object{name: value, ...} 
-	// from form.serializeArray()
-	function get_form_values(form_items){
-		var obj = {};
-		form_items.forEach(function(form_item) {
-			obj[form_item.name] = form_item.value;
-		});
-		return obj;
-	}
 
 })(jQuery);

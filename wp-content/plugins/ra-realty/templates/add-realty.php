@@ -15,7 +15,7 @@ $atts = get_query_var('atts');
 		<?php echo implode('<br>', $atts['errors']) ?>
 	<?php else: ?>
 		<form method="post" action="<?php echo RARLT_PLUGIN_URL; ?>/ajax/" class="add-realty-form needs-validation" id="add-realty-form" novalidate>
-			<?php wp_nonce_field(); ?>
+			<?php wp_nonce_field('addpost', 'addpost_wpnonce'); ?>
 			<?php foreach ($atts['fields'] as $field) :?>
 				<?php if($field['name']) : ?>
 					<?php switch ($field['type']) {

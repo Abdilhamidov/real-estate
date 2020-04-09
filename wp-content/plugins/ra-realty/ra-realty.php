@@ -23,8 +23,10 @@ function rarlt_plugin_init(){
 
 	include_once(RARLT_PLUGIN_DIR."settings.php");
 
-	// include shortcode [add-realty...]
+	// include shortcode with add post form [add-realty...]
 	include_once(RARLT_PLUGIN_DIR."shortcodes/add-realty.php");
+
+	include_once(RARLT_PLUGIN_DIR."inc/hooks.php");
 
 	/* 
 	* Include CSS and JS for front
