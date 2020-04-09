@@ -3,6 +3,9 @@
  * Settings
  * ==================================== */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Создаем страницу настроек плагина
  */

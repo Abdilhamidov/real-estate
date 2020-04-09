@@ -4,6 +4,10 @@
  * Displays realties linked to city
  * @param 
 */
+
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 add_shortcode( 'add-realty', function($atts){
 
 	$errors = array();

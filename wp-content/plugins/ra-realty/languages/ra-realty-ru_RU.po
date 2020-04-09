@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: understrap\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2020-04-08 19:34+0300\n"
-"PO-Revision-Date: 2020-04-08 19:36+0300\n"
+"POT-Creation-Date: 2020-04-09 09:37+0300\n"
+"PO-Revision-Date: 2020-04-09 09:38+0300\n"
 "Last-Translator: edkozuto <edkozuto@gmail.com>\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -26,39 +26,39 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: languages\n"
 "X-Poedit-SearchPathExcluded-1: assets\n"
 
-#: ra-realty.php:54
+#: ra-realty.php:58
 msgid "Settings for RA Realty"
 msgstr "Настройки RA Realty"
 
-#: ra-realty.php:55
+#: ra-realty.php:59
 msgid "Settings"
 msgstr "Настройки"
 
-#: settings.php:11
+#: settings.php:14
 msgid "RA Realty Settings"
 msgstr "Настройки плагина RA Realty"
 
-#: settings.php:11
+#: settings.php:14
 msgid "RA Realty"
 msgstr ""
 
-#: settings.php:42 settings.php:74
+#: settings.php:45 settings.php:77
 msgid "Main Settings"
 msgstr "Основые"
 
-#: settings.php:76
+#: settings.php:79
 msgid "Select Realty Post Type"
 msgstr "Тип поста записей \"Недвижимость\""
 
-#: settings.php:77
+#: settings.php:80
 msgid "Select Linked City Post Type"
 msgstr "Связанный с недвижимостью тип поста записей \"Город\""
 
-#: settings.php:87
+#: settings.php:90
 msgid "Main Settings Tab Description"
 msgstr "Основные настройки плагина"
 
-#: shortcodes/add-realty.php:29
+#: shortcodes/add-realty.php:33
 msgid ""
 "Function acf_get_field_groups() not found. Probably Advanced Custom Fields "
 "plugin is not installed"
@@ -74,6 +74,14 @@ msgstr "Добавить недвижимость"
 msgid "Select City"
 msgstr "Выберите город"
 
-#: templates/add-realty.php:62
+#: templates/add-realty.php:33
+msgid "Select the item"
+msgstr "Выберите пункт"
+
+#: templates/add-realty.php:53
+msgid "Fill the field"
+msgstr "Заполните поле"
+
+#: templates/add-realty.php:63
 msgid "Submit"
 msgstr "Отправить"
