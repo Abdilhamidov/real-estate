@@ -6,7 +6,7 @@
 ?>
 <?php 
 $atts = get_query_var('atts');
-// fppr($atts, __FILE__.' $atts');
+fppr($atts, __FILE__.' $atts');
 ?>
 
 <div class="add-realty-wrapper container mt-3">
@@ -16,6 +16,31 @@ $atts = get_query_var('atts');
 	<?php else: ?>
 		<form method="post" action="<?php echo RARLT_PLUGIN_URL; ?>/ajax/" class="add-realty-form needs-validation" id="add-realty-form" novalidate>
 			<?php wp_nonce_field('addpost', 'addpost_wpnonce'); ?>
+
+			<div class="form-group">
+				<label for="field-post_title"><?php _e('Title', 'ra-realty'); ?>*</label>
+				<input name="post_title" type="text" class="form-control" id="field-post_title" required>
+				<div class="invalid-feedback"><?php _e('Fill the field', 'ra-realty'); ?></div>
+			</div>
+
+			<div class="form-group">
+				<label for="field-post_content"><?php _e('Description', 'ra-realty'); ?></label>
+				<textarea name="post_content" class="form-control" id="field-post_content" rows="3"></textarea>
+			</div>
+
+			<?php if($atts['terms']) : ?>
+				<div class="form-group">
+					<label for="field-post_category"><?php _e('Realty Type', 'ra-realty'); ?>*</label>
+					<select name="post_category" class="form-control" id="field-post_category" required>
+						<option value="" selected><?php _e('Select Realty Type', 'add-realty'); ?></option>
+						<?php foreach ($atts['terms'] as $term) : ?>
+							<option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
+						<?php endforeach; ?>
+					</select>
+					<div class="invalid-feedback"><?php _e('Select the item', 'ra-realty'); ?></div>
+				</div>
+			<?php endif; ?>
+
 			<?php foreach ($atts['fields'] as $field) :?>
 				<?php if($field['name']) : ?>
 					<?php switch ($field['type']) {

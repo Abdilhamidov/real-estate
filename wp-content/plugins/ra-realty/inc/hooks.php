@@ -22,26 +22,31 @@ function addpost_callback() {
 	}else{
 
 		// Create a new post
-		$realty = array(
+		$realty_args = array(
 			'post_status' => 'publish',
 			'post_type' => 'realty',
-			'post_title' => 'Объект'
+			'post_title' => $_REQUEST['post_title'],
+			'post_content' => $_REQUEST['post_content'],
+			'tax_input' => array('realty_category' => array($_REQUEST['post_category'])),
 		);	
-		$post_id = wp_insert_post( $realty, $wp_error ); 
+		$post_id = wp_insert_post( $realty_args, $wp_error ); 
+
 		if( is_wp_error( $error ) ){
 			$responce['errors'][] = $wp_error->get_error_message();
-		}
-
-		// file meta fields
-		$is_fields_added = true;
-		foreach ($_REQUEST['fields'] as $key => $value) {
-			if(!update_field($key, $value, $post_id)) {
-				$is_fields_added = false;
+		}else{
+			
+			// file meta fields
+			$is_fields_added = true;
+			foreach ($_REQUEST['fields'] as $key => $value) {
+				if(!update_field($key, $value, $post_id)) {
+					$is_fields_added = false;
+				}
+			}
+			if(!$is_fields_added){
+				$responce['errors'][] = __('All fields not added succesfully', 'ra-realty');
 			}
 		}
-		if(!$is_fields_added){
-			$responce['errors'][] = __('All fields not added succesfully', 'ra-realty');
-		}
+
 	}
 
 	echo json_encode($responce);

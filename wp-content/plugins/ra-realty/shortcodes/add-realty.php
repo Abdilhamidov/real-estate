@@ -46,11 +46,17 @@ add_shortcode( 'add-realty', function($atts){
 		$cities = $result->posts;
 	}
 
+	// разделы недвижимости
+	$post_type_obj = get_post_type_object( $ra_rlt_options['realty_post_type'] );
+	$term_args['taxonomy'] = $post_type_obj->taxonomies;
+	$term_query = new WP_Term_Query($term_args);
+
 	// template render with attributes
 	$atts = shortcode_atts( array(
 		'errors' => $errors,
 		'fields' => $fields,
-		'cities' => $cities
+		'terms' => $term_query->terms,
+		'cities' => $cities,
 	), $atts, 'add-realty');
 
 	set_query_var('atts', $atts); // send data to template
