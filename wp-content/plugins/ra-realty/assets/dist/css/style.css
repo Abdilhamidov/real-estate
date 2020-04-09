@@ -4,3 +4,18 @@
 /* vars */
 /* helpers */
 /* main */
+form.add-realty-form {
+  position: relative; }
+  form.add-realty-form .form-overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute; }
+  form.add-realty-form .add-post-spinner {
+    display: none; }
+  form.add-realty-form .alert {
+    display: none; }

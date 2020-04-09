@@ -8,6 +8,7 @@
 		// Loop over them and prevent submission
 		var validation = Array.prototype.filter.call(forms, function(form) {
 			form.addEventListener('submit', function(event) {
+				$(form).find('.alert').css({'display':'none'});
 				if (form.checkValidity() === false) {
 					event.preventDefault();
 					event.stopPropagation();
@@ -20,17 +21,18 @@
 	// 
 	$(document).ready(function(){
 
-		// $(["input.input-phone", ".wpcf7-tel"]).inputmask("+7 (999) 999-99-99");
-
 	})
 	// 
 	.on('submit', 'form.add-realty-form', function(e){
 		e.preventDefault();
+		var form = $(this);
 
-		var post_data = $(this).serializeObject();
+		var post_data = $(form).serializeObject();
 		post_data['action'] = 'addpost';
 
-		console.log('post_data', post_data);
+		$(form).find('.add-post-spinner').css({'display':'inline-block'});
+		$(form).find('.form-overlay').fadeIn();
+		$(form).find('.alert').css({'display':'none'});
 
 		$.ajax({
 			type: "POST",
@@ -42,8 +44,12 @@
 				if(responce.errors.length){
 					alert(responce.errors.join('; '));
 				}else{
-					
+					$(form).find('.alert').css({'display':'block'});
 				}
+				$(form).find('.add-post-spinner').css({'display':'none'});
+				$(form).find('.form-overlay').fadeOut();
+				$(form).trigger("reset");
+				$(form).removeClass("was-validated");
 			},
 			error: function (jqXHR, exception) {
 				var msg = '';

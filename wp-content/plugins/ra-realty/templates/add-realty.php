@@ -6,7 +6,7 @@
 ?>
 <?php 
 $atts = get_query_var('atts');
-fppr($atts, __FILE__.' $atts');
+// fppr($atts, __FILE__.' $atts');
 ?>
 
 <div class="add-realty-wrapper container mt-3">
@@ -14,7 +14,7 @@ fppr($atts, __FILE__.' $atts');
 	<?php if($atts['errors']) : ?>
 		<?php echo implode('<br>', $atts['errors']) ?>
 	<?php else: ?>
-		<form method="post" action="<?php echo RARLT_PLUGIN_URL; ?>/ajax/" class="add-realty-form needs-validation" id="add-realty-form" novalidate>
+		<form method="post" class="add-realty-form needs-validation" id="add-realty-form" novalidate>
 			<?php wp_nonce_field('addpost', 'addpost_wpnonce'); ?>
 
 			<div class="form-group">
@@ -32,7 +32,7 @@ fppr($atts, __FILE__.' $atts');
 				<div class="form-group">
 					<label for="field-post_category"><?php _e('Realty Type', 'ra-realty'); ?>*</label>
 					<select name="post_category" class="form-control" id="field-post_category" required>
-						<option value="" selected><?php _e('Select Realty Type', 'add-realty'); ?></option>
+						<option value="" selected><?php _e('Select Realty Type', 'ra-realty'); ?></option>
 						<?php foreach ($atts['terms'] as $term) : ?>
 							<option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
 						<?php endforeach; ?>
@@ -50,7 +50,7 @@ fppr($atts, __FILE__.' $atts');
 								<div class="form-group">
 									<label for="field-<?php echo $field['ID']; ?>"><?php echo $field['label']; ?><?php echo $field['required'] ? "*" : ""; ?></label>
 									<select name="fields[<?php echo $field['name']; ?>]" class="form-control" id="field-<?php echo $field['ID']; ?>"<?php echo $field['required'] ? " required" : ""; ?>>
-										<option value="" selected><?php _e('Select City', 'add-realty'); ?></option>
+										<option value="" selected><?php _e('Select City', 'ra-realty'); ?></option>
 										<?php foreach ($atts['cities'] as $city) : ?>
 											<option value="<?php echo $city->ID; ?>"><?php echo $city->post_title; ?></option>
 										<?php endforeach; ?>
@@ -85,8 +85,15 @@ fppr($atts, __FILE__.' $atts');
 				<?php endif; ?>
 			<?php endforeach; ?>
 			<div class="form-footer text-center">
-				<button type="submit" class="btn btn-primary "><?php _e('Submit', 'default'); ?></button>
+				<button type="submit" class="btn btn-primary ">
+					<span class="add-post-spinner spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+					<?php _e('Submit', 'default'); ?>
+				</button>
+				<div class="alert alert-success mt-3" role="alert">
+					<?php _e('Post is successfully added!', 'ra-realty'); ?>
+				</div>
 			</div>
+			<div class="form-overlay"></div>
 		</form>
 	<?php endif; ?>
 </div>

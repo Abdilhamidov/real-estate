@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: understrap\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2020-04-09 09:37+0300\n"
-"PO-Revision-Date: 2020-04-09 09:38+0300\n"
+"POT-Creation-Date: 2020-04-09 14:04+0300\n"
+"PO-Revision-Date: 2020-04-09 14:04+0300\n"
 "Last-Translator: edkozuto <edkozuto@gmail.com>\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -26,11 +26,19 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: languages\n"
 "X-Poedit-SearchPathExcluded-1: assets\n"
 
-#: ra-realty.php:58
+#: inc/hooks.php:21
+msgid "wp_nonce not valid"
+msgstr "проверочный код формы неверен"
+
+#: inc/hooks.php:46
+msgid "All fields not added succesfully"
+msgstr "Ошибка записи данных в пост"
+
+#: ra-realty.php:60
 msgid "Settings for RA Realty"
 msgstr "Настройки RA Realty"
 
-#: ra-realty.php:59
+#: ra-realty.php:61
 msgid "Settings"
 msgstr "Настройки"
 
@@ -70,18 +78,38 @@ msgstr ""
 msgid "Add Realty"
 msgstr "Добавить недвижимость"
 
-#: templates/add-realty.php:28
-msgid "Select City"
-msgstr "Выберите город"
+#: templates/add-realty.php:21
+msgid "Title"
+msgstr "Заголовок"
+
+#: templates/add-realty.php:23 templates/add-realty.php:78
+msgid "Fill the field"
+msgstr "Заполните поле"
+
+#: templates/add-realty.php:27
+msgid "Description"
+msgstr "Описание"
 
 #: templates/add-realty.php:33
+msgid "Realty Type"
+msgstr "Тип недвижимости"
+
+#: templates/add-realty.php:35
+msgid "Select Realty Type"
+msgstr "Выберите тип недвижимости"
+
+#: templates/add-realty.php:40 templates/add-realty.php:58
 msgid "Select the item"
 msgstr "Выберите пункт"
 
 #: templates/add-realty.php:53
-msgid "Fill the field"
-msgstr "Заполните поле"
+msgid "Select City"
+msgstr "Выберите город"
 
-#: templates/add-realty.php:63
+#: templates/add-realty.php:90
 msgid "Submit"
 msgstr "Отправить"
+
+#: templates/add-realty.php:93
+msgid "Post is successfully added!"
+msgstr "Объект недвижимости успешно добавлен!"
