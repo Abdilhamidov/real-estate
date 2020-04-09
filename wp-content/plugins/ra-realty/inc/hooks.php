@@ -12,6 +12,7 @@ if( wp_doing_ajax() ){
 	add_action('wp_ajax_addpost', 'addpost_callback');
 	add_action('wp_ajax_nopriv_addpost', 'addpost_callback');
 }
+
 function addpost_callback() {
 	$responce = array();
 	$responce['errors'] = array();
@@ -34,6 +35,22 @@ function addpost_callback() {
 		if( is_wp_error( $error ) ){
 			$responce['errors'][] = $wp_error->get_error_message();
 		}else{
+
+			// Загрузка фото и создание миниатюры поста
+			if(isset($_FILES['file'])){
+				require_once( ABSPATH . 'wp-admin/includes/image.php' );
+				require_once( ABSPATH . 'wp-admin/includes/file.php' );
+				require_once( ABSPATH . 'wp-admin/includes/media.php' );
+
+				$attachment_id = media_handle_upload( 'file', 0 );
+				$responce['attachment_id'] = $attachment_id;
+
+				if ( is_wp_error( $attachment_id ) ) {
+					$responce['errors'][] = __('Photo upload error', 'ra-realty');
+				}else{
+					set_post_thumbnail( $post_id, $attachment_id );
+				}
+			}
 			
 			// file meta fields
 			$is_fields_added = true;
@@ -46,7 +63,6 @@ function addpost_callback() {
 				$responce['errors'][] = __('All fields not added succesfully', 'ra-realty');
 			}
 		}
-
 	}
 
 	echo json_encode($responce);

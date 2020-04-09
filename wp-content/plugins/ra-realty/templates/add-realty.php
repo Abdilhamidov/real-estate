@@ -14,7 +14,7 @@ $atts = get_query_var('atts');
 	<?php if($atts['errors']) : ?>
 		<?php echo implode('<br>', $atts['errors']) ?>
 	<?php else: ?>
-		<form method="post" class="add-realty-form needs-validation" id="add-realty-form" novalidate>
+		<form method="post" class="add-realty-form needs-validation" id="add-realty-form" enctype="multipart/form-data" novalidate>
 			<?php wp_nonce_field('addpost', 'addpost_wpnonce'); ?>
 
 			<div class="form-group">
@@ -22,10 +22,18 @@ $atts = get_query_var('atts');
 				<input name="post_title" type="text" class="form-control" id="field-post_title" required>
 				<div class="invalid-feedback"><?php _e('Fill the field', 'ra-realty'); ?></div>
 			</div>
-
 			<div class="form-group">
 				<label for="field-post_content"><?php _e('Description', 'ra-realty'); ?></label>
 				<textarea name="post_content" class="form-control" id="field-post_content" rows="3"></textarea>
+			</div>
+			<div class="form-group">
+				<label><?php _e('Realty Photo', 'ra-realty'); ?></label>
+				<div class="input-group">
+					<div class="custom-file">
+						<input name="realty_photo" type="file" class="realty-photo custom-file-input" id="field-realty-photo" data-files>
+						<label class="realty-photo-label custom-file-label" for="field-realty-photo"><?php _e('Choose file', 'ra-realty'); ?></label>
+					</div>
+				</div>
 			</div>
 
 			<?php if($atts['terms']) : ?>
@@ -74,7 +82,6 @@ $atts = get_query_var('atts');
 							<div class="form-group">
 								<label for="field-<?php echo $field['ID']; ?>"><?php echo $field['label']; ?><?php echo $field['required'] ? "*" : ""; ?></label>
 								<input name="fields[<?php echo $field['name']; ?>]" type="<?php echo $field['type']; ?>" class="form-control" id="field-<?php echo $field['ID']; ?>"<?php echo $field['required'] ? " required" : ""; ?>>
-								<!-- <div class="valid-feedback">Looks good!</div> -->
 								<div class="invalid-feedback"><?php _e('Fill the field', 'ra-realty'); ?></div>
 							</div>
 							<?php break;
@@ -84,6 +91,7 @@ $atts = get_query_var('atts');
 					} ?>
 				<?php endif; ?>
 			<?php endforeach; ?>
+
 			<div class="form-footer text-center">
 				<button type="submit" class="btn btn-primary ">
 					<span class="add-post-spinner spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>

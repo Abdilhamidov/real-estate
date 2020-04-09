@@ -18,26 +18,37 @@
 		});
 	}, false);
 
+
 	// 
 	$(document).ready(function(){
 
 	})
-	// 
+
+	// добавление имени загружаемого файла в инпут
+	.on('change', 'form.add-realty-form .realty-photo', function(e){
+		var fileObj =  e.target.files[0];
+		$(this).next('.realty-photo-label').text(fileObj.name);
+	})
+
+	// добавление поста недвижимости
 	.on('submit', 'form.add-realty-form', function(e){
 		e.preventDefault();
 		var form = $(this);
-
-		var post_data = $(form).serializeObject();
-		post_data['action'] = 'addpost';
 
 		$(form).find('.add-post-spinner').css({'display':'inline-block'});
 		$(form).find('.form-overlay').fadeIn();
 		$(form).find('.alert').css({'display':'none'});
 
+		var form_data = new FormData($(form)[0]); 
+		form_data.append('action', 'addpost');
+		form_data.append('file', $('input.realty-photo').prop('files')[0]);
+
 		$.ajax({
 			type: "POST",
 			url: myajax.url,
-			data: post_data,
+			processData: false,
+			contentType: false,
+			data: form_data,
 			dataType: 'json',
 			success: function(responce){
 				console.log('responce', responce);
@@ -50,29 +61,15 @@
 				$(form).find('.form-overlay').fadeOut();
 				$(form).trigger("reset");
 				$(form).removeClass("was-validated");
+				$(form).find('.realty-photo-label').text("");
 			},
 			error: function (jqXHR, exception) {
-				var msg = '';
-				if (jqXHR.status === 0) {
-				   msg = 'Not connect.\n Verify Network.';
-				} else if (jqXHR.status == 404) {
-				   msg = 'Requested page not found. [404]';
-				} else if (jqXHR.status == 500) {
-				   msg = 'Internal Server Error [500].';
-				} else if (exception === 'parsererror') {
-				   msg = 'Requested JSON parse failed.';
-				} else if (exception === 'timeout') {
-				   msg = 'Time out error.';
-				} else if (exception === 'abort') {
-				   msg = 'Ajax request aborted.';
-				} else {
-				   msg = 'Uncaught Error.\n' + jqXHR.responseText;
-				}
-				console.warn(msg);
+				console.warn('add post ajax error');
 			},
 		});
 	})
 	;
+
 
 	/*	------------------
 		Helper functions
