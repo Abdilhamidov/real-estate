@@ -6,7 +6,7 @@
 ?>
 <?php 
 $atts = get_query_var('atts');
-fppr($atts, __FILE__.' $atts');
+// fppr($atts, __FILE__.' $atts');
 ?>
 
 <div class="add-realty-wrapper container mt-3">
