@@ -17,7 +17,7 @@ function understrap_child_scripts() {
 	// my styles
 	wp_enqueue_style( 'fingildiya-style', get_stylesheet_directory_uri() . '/assets/dist/css/style.min.css', array(), "1.0.0" );
 
-	// mey scripts
+	// my scripts
 	wp_enqueue_script( 'understrap-child-scripts', get_stylesheet_directory_uri() . '/assets/dist/js/main.min.js', array('jquery'), "1.0", true );
 
 	// переменная для ajax-запросов
@@ -26,6 +26,14 @@ function understrap_child_scripts() {
 			'url' => admin_url('admin-ajax.php')
 		)
 	); 
+
+	// inputmask
+	wp_register_script( 'inputmask', get_stylesheet_directory_uri() . '/assets/vendor/jquery.inputmask.min.js', array('jquery'), null, true );
+	wp_enqueue_script( 'inputmask' );
+
+	wp_register_script( 'inputmaskbindings', get_stylesheet_directory_uri() . '/assets/vendor/inputmask.binding.min.js', array('jquery', 'inputmask'), null, true );
+	wp_enqueue_script( 'inputmaskbindings' );
+	
 }
 add_action( 'wp_enqueue_scripts', 'understrap_child_scripts' );
 

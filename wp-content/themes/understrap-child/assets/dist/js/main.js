@@ -2,6 +2,9 @@
 	"use strict";
 	// 
 	$(document).ready(function(){
+
+		$(".fractional-number").inputmask({ regex: "[\\d,.]+", greedy: false });
+		
 	})
 	// 
 	// .on('submit', 'form.add-realty-form', function(e){

@@ -6,7 +6,7 @@
 ?>
 <?php 
 $atts = get_query_var('atts');
-// fppr($atts, __FILE__.' $atts');
+fppr($atts, __FILE__.' $atts');
 ?>
 
 <div class="add-realty-wrapper container mt-3">
@@ -82,7 +82,7 @@ $atts = get_query_var('atts');
 							?>
 								<div class="form-group col-md-6">
 									<label for="field-<?php echo $field['ID']; ?>"><?php echo $field['label']; ?><?php echo $field['required'] ? "*" : ""; ?></label>
-									<input name="fields[<?php echo $field['name']; ?>]" type="<?php echo $field['type']; ?>" class="form-control" id="field-<?php echo $field['ID']; ?>"<?php echo $field['required'] ? " required" : ""; ?>>
+									<input name="fields[<?php echo $field['name']; ?>]" type="<?php echo $field['type']; ?>" class="form-control <?php echo $field['wrapper']['class']; ?>" id="field-<?php echo $field['ID']; ?>"<?php echo $field['required'] ? " required" : ""; ?>>
 									<div class="invalid-feedback"><?php _e('Fill the field', 'ra-realty'); ?></div>
 								</div>
 								<?php break;
