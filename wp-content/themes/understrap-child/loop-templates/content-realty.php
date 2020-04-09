@@ -18,7 +18,11 @@ defined( 'ABSPATH' ) || exit;
 		<div class="h-from-w ratio-4x3">
 			<div class="ratio-content">
 				<a href="<?php echo get_permalink($post->ID); ?>">
-					<?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
+					<?php if( $post_thumbnail = get_the_post_thumbnail( $post->ID, 'medium' ) ) :
+						echo $post_thumbnail; ?>
+					<?php else: ?>
+						<img src="https://via.placeholder.com/342x257.jpg" alt="">
+					<?php endif; ?>
 				</a>
 			</div>
 		</div>
