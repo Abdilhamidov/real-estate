@@ -1,6 +1,7 @@
 wp-admin
 wp-includes
 
+wp-content/ai1wm-backups/
 wp-content/languages/
 wp-content/plugins/*
 !wp-content/plugins/ra-realty
